@@ -1,0 +1,12 @@
+<h1>id:
+<%= @task.id %>
+の詳細やで〜(ﾟωﾟ)</h1>
+
+<p>
+<%= @task.content %>
+</p>
+
+<%= link_to '一覧に戻〜る', tasks_path %>
+
+<%= link_to '書き換え〜るｖ', edit_task_path(@task) %>
+<%= link_to '削除削除削除ぉぉぉおおお', @task, method: :delete, data: { confirm: 'おまえ、、、消えるのか？' } %>

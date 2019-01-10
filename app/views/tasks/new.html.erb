@@ -1,0 +1,11 @@
+<h1>おまいらのやることを書き込むお(^ω^)</h1>
+<%= form_for(@task) do |f| %>
+
+<%= f.label :content, 'タスク' %>
+
+<%= f.text_field :content %>
+
+<%= f.submit '投稿' %>
+<% end %>
+
+<%= link_to '「やること一覧」へ戻る', tasks_path %>
