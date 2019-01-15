@@ -1,18 +1,26 @@
-<h1>id:
+<h1>id =
 <%= @task.id %>
-の詳細やで〜(ﾟωﾟ)</h1>
+のタスク詳細ページ</h1>
+<table class="table table-bordered">
 
-<p>
-<%= @task.title %>
-</p>
-<p>
-<%= @task.content %>
-</p>
-<p>
-<%= @task.status %>
-</p>
+  <tr>
+    <th>id</th>
+    <td>
+      <%= @task.id %></td>
+</tr>
 
-<%= link_to '一覧に戻〜る', tasks_path %>
+<tr>
+<th>タイトル</th>
+  <td>
+    <%= @task.title %></td>
+</tr>
 
-<%= link_to '書き換え〜るｖ', edit_task_path(@task) %>
-<%= link_to '削除削除削除ぉぉぉおおお', @task, method: :delete, data: { confirm: 'おまえ、、、消えるのか？' } %>
+  <tr>
+<th>タスク</th>
+  <td>
+<%= @task.content %></td>
+  </tr>
+
+  </table>
+<%= link_to 'このタスクを編集する', edit_task_path(@task), class: 'btn btn-default' %>
+<%= link_to 'このタスクを削除する', @task, method: :delete, data: { confirm: '本当に削除してよろしいですか?' }, class: 'btn btn-danger' %>
