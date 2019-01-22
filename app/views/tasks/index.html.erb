@@ -1,3 +1,8 @@
+<% if logged_in? %>
+<p>ログイン完了ユーザ:
+  <%= current_user.name %>
+</p>
+
 <h1>タスクの一覧ぺーじだお(^ω^)</h1>
 
   <% if @tasks.any? %>
@@ -30,3 +35,14 @@
         <%= paginate @tasks %>
         </div> <% end %>
         <%= link_to '新規タスクの投稿', new_task_path, class: "btn btn-primary" %>
+
+<% else %>
+
+<div class="center jumbotron">
+  <div class="text-center">
+    <h1>タスク管理へようこそ</h1>
+
+<%= link_to 'Sign up now!', signup_path, class: 'btn btn-lg btn-primary' %>
+  </div>
+</div>
+<% end %>
